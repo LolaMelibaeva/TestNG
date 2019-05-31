@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="5768" started-at="2019-05-31T00:36:16Z" finished-at="2019-05-31T00:36:21Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="5768" started-at="2019-05-31T00:36:16Z" finished-at="2019-05-31T00:36:21Z">
+      <class name="com.class02.SmartbearsoftwareExample">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.class02.SmartbearsoftwareExample@1593948d]" name="setUp" is-config="true" duration-ms="4848" started-at="2019-05-31T00:36:16Z" finished-at="2019-05-31T00:36:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginScreenTitle()[pri:1, instance:com.class02.SmartbearsoftwareExample@1593948d]" name="loginScreenTitle" duration-ms="15" started-at="2019-05-31T00:36:21Z" finished-at="2019-05-31T00:36:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScreenTitle -->
+        <test-method status="PASS" signature="login()[pri:2, instance:com.class02.SmartbearsoftwareExample@1593948d]" name="login" duration-ms="727" started-at="2019-05-31T00:36:21Z" finished-at="2019-05-31T00:36:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="webOrders()[pri:3, instance:com.class02.SmartbearsoftwareExample@1593948d]" name="webOrders" duration-ms="51" started-at="2019-05-31T00:36:21Z" finished-at="2019-05-31T00:36:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- webOrders -->
+        <test-method status="PASS" signature="closed()[pri:0, instance:com.class02.SmartbearsoftwareExample@1593948d]" name="closed" is-config="true" duration-ms="107" started-at="2019-05-31T00:36:21Z" finished-at="2019-05-31T00:36:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closed -->
+      </class> <!-- com.class02.SmartbearsoftwareExample -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
