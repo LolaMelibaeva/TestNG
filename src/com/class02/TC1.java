@@ -28,7 +28,7 @@ public class TC1 extends CommonMethods {
 		setUpDriver("chrome", "https://opensource-demo.orangehrmlive.com/");
 	
 	
-		String orangehrm=driver.getTitle();
+	String orangehrm=driver.getTitle();
 	String expectedValue="OrangeHRM";
 	if (orangehrm.equalsIgnoreCase(expectedValue)) {
 		System.out.println("This is the right title");

@@ -11,5 +11,10 @@
 	<classpathentry kind="lib" path="C:/Users/Lola Melibaeva/Selenium/selenium-java-3.141.59/client-combined-3.141.59.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Lola Melibaeva/Selenium/selenium-java-3.141.59/client-combined-3.141.59-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Lola Melibaeva/Selenium/selenium-server-standalone-3.141.59.jar" sourcepath="C:/Users/Lola Melibaeva/Selenium/selenium-java-3.141.59/client-combined-3.141.59-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lola Melibaeva/Selenium/commons-io-2.6/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lola Melibaeva/Selenium/commons-io-2.6/commons-io-2.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lola Melibaeva/Selenium/commons-io-2.6/commons-io-2.6-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lola Melibaeva/Selenium/commons-io-2.6/commons-io-2.6-tests.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lola Melibaeva/Selenium/commons-io-2.6/commons-io-2.6-test-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

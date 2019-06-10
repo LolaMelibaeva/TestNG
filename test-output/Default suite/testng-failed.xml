@@ -3,13 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.class02.TC1">
+      <class name="com.class04.WebOrderTask">
         <methods>
-          <include name="setUp"/>
+          <include name="verifyUserOne"/>
           <include name="login"/>
-          <include name="closeDriver"/>
+          <include name="verifyUserTwo"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="creatingAndVerifyingUsers"/>
         </methods>
-      </class> <!-- com.class02.TC1 -->
+      </class> <!-- com.class04.WebOrderTask -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

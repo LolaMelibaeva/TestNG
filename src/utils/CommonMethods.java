@@ -1,18 +1,26 @@
 package utils;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.ISelect;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonMethods {
 
@@ -20,11 +28,11 @@ public class CommonMethods {
 
 	public static void setUpDriver(String browser, String url) {
 		if (browser.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "src/driver/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "src/drivers/chromedriver.exe");
 
 			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "src/driver/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "src/drivers/geckodriver.exe");
 			driver = new FirefoxDriver();
 		} else {
 			System.out.println("Browser given is wrong");
@@ -67,9 +75,11 @@ public class CommonMethods {
 	 */
 	public static void selectValueFromDD(WebElement element, int index) {
 		Select select = new Select(element);
+		
 		List<WebElement> options = select.getOptions();
 		if (options.size() > index) {
 			select.selectByIndex(index);
+			
 		} else {
 			System.out.println("Invalid index has been passed");
 		}
@@ -170,66 +180,174 @@ public class CommonMethods {
 	 * 
 	 * @param element
 	 */
-	public static void clickElement(WebElement element) {
+	public static void click (WebElement element) {
 		element.click();
 
 	}
 
-	public static void selectDateFromCalendar(List<WebElement> list, String expectedValue) {
+	public static void selectDateFromCalendar(List<WebElement> rows, String expectedValue) {
 
-		List<WebElement> rows = (List<WebElement>) list;
-
+		boolean isSelected=false;
 		for (WebElement row : rows) {
 			String rowText = row.getText();
 			if (rowText.contains(expectedValue)) {
 				row.click();
 				System.out.println(expectedValue + " is selected");
-
+				isSelected=true;
+				break;
 			}
+
+		}
+		if (!isSelected) {
+			System.out.println("Expected value " + expectedValue + " is NOT selected");
+
 		}
 	}
+			
+	
 
-	public static void selectCellFromTable(List<WebElement> list, String expectedValue) {
+	public static void selectCellFromTable(List<WebElement> rows, String expectedValue) {
 
-		List<WebElement> rows = (List<WebElement>) list;
-
+		
+		boolean isSelected=false;
 		for (WebElement row : rows) {
 			String rowText = row.getText();
 			if (rowText.contains(expectedValue)) {
 				row.click();
 				System.out.println(expectedValue + " is selected");
-
+				isSelected=true;
+				break;
 			}
 
 		}
+		if (!isSelected) {
+			System.out.println("Expected value " + expectedValue + " is NOT selected");
+
+		}
 	}
+			
 
-	public static void selectRadioBtn(List<WebElement> list, String expectedValue) {
+	
 
+	public static void selectFromRadioButton(List<WebElement> list, String expectedValue) {
+		boolean isSelected=false;
 		for (WebElement button : list) {
-			String buttonText = button.getText();
+			String buttonText = button.getAttribute("value");
 
 			if (button.isDisplayed() && button.isEnabled() && buttonText.equals(expectedValue)) {
 				button.click();
-
 				System.out.println(expectedValue + " is selected");
+				isSelected=true;
+				break;
 			}
+
+		}
+		if (!isSelected) {
+			System.out.println("Expected value " + expectedValue + " is NOT selected");
 
 		}
 	}
 
-	public static void selectCheckbox(List<WebElement> list, String expectedValue) {
+	
 
+	public static void selectCheckbox(List<WebElement> list, String expectedValue) {
+		boolean isSelected = false;
 		for (WebElement checkbox : list) {
 			String checkboxText = checkbox.getText();
 
 			if (checkbox.isDisplayed() && checkbox.isEnabled() && checkboxText.equals(expectedValue)) {
 				checkbox.click();
 				System.out.println(expectedValue + " is selected");
-
+				isSelected = true;
+				break;
 			}
 
 		}
+		if (!isSelected) {
+			System.out.println("Expected value " + expectedValue + " is NOT selected");
+
+		}
+	}
+	
+	/**
+	 * Method that will wait for element to be visible
+	 * 
+	 * @param WebElement element, int time
+	 */
+	public static void waitForElementBeVisible(WebElement element, int time) {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
+	public static void waitForElementBeVisible(By locator, int time) {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+
+	public static void waitForElementBeClickable(WebElement element, int time) {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+
+	public static void waitForElementBeClickable(By locator, int time) {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.elementToBeClickable(locator));
+	}
+	
+	public static void takeScreenshot(String folderName, String fileName) {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File scr = ts.getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(scr, new File("screenshots/"+folderName+"/"+fileName+".png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+			System.out.println("Screenshot is NOT taken");
+		}
+	}
+	public static void scrollDown(int pixels) {
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,"+pixels+")");
+	}
+	
+	public static void scrollUp(int pixels) {
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,-"+pixels+")");
+	}
+	
+	public static void jsClick(WebElement element) {
+		
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", element);
+		
+	}
+	
+	/**
+	 * Method that compares each cell in the table
+	 * 
+	 * @param List<WebElement>cells, String expValue
+	 */
+	
+public static void tableCompareCellValueToExpected(List<WebElement>cells,String expValue) {
+	boolean isSelected = false;
+        for(WebElement cell:cells) {
+            String cellText=cell.getText();
+                if(cellText.equals(expValue)) {
+                   System.out.println(expValue +" is verified on the table");
+                   isSelected=true;
+                   break;
+                }
+            }
+
+if (!isSelected) {
+	System.out.println("Expected value is NOT verified on the table");
+
 }
+}
+    }
+
+
+
+
+
+
+

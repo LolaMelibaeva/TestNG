@@ -5,9 +5,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import utils.CommonMethods2;
+import utils.CommonMethods;
 
-public class orangehrmExample extends CommonMethods2 {
+public class orangehrmExample extends CommonMethods{
 
 	@BeforeMethod
 	public void setUP(){

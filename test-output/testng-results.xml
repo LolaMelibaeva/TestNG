@@ -1,33 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5768" started-at="2019-05-31T00:36:16Z" finished-at="2019-05-31T00:36:21Z">
+  <suite name="Default suite" duration-ms="17425" started-at="2019-06-10T03:09:37Z" finished-at="2019-06-10T03:09:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5768" started-at="2019-05-31T00:36:16Z" finished-at="2019-05-31T00:36:21Z">
-      <class name="com.class02.SmartbearsoftwareExample">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.class02.SmartbearsoftwareExample@1593948d]" name="setUp" is-config="true" duration-ms="4848" started-at="2019-05-31T00:36:16Z" finished-at="2019-05-31T00:36:21Z">
+    <test name="Default test" duration-ms="17425" started-at="2019-06-10T03:09:37Z" finished-at="2019-06-10T03:09:54Z">
+      <class name="com.class04.WebOrderTask">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.class04.WebOrderTask@8bd1b6a]" name="setUp" is-config="true" duration-ms="4073" started-at="2019-06-10T03:09:37Z" finished-at="2019-06-10T03:09:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginScreenTitle()[pri:1, instance:com.class02.SmartbearsoftwareExample@1593948d]" name="loginScreenTitle" duration-ms="15" started-at="2019-05-31T00:36:21Z" finished-at="2019-05-31T00:36:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginScreenTitle -->
-        <test-method status="PASS" signature="login()[pri:2, instance:com.class02.SmartbearsoftwareExample@1593948d]" name="login" duration-ms="727" started-at="2019-05-31T00:36:21Z" finished-at="2019-05-31T00:36:21Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:com.class04.WebOrderTask@8bd1b6a]" name="login" duration-ms="3648" started-at="2019-06-10T03:09:41Z" finished-at="2019-06-10T03:09:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="webOrders()[pri:3, instance:com.class02.SmartbearsoftwareExample@1593948d]" name="webOrders" duration-ms="51" started-at="2019-05-31T00:36:21Z" finished-at="2019-05-31T00:36:21Z">
+        <test-method status="PASS" signature="creatingAndVerifyingUsers(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.class04.WebOrderTask@8bd1b6a]" name="creatingAndVerifyingUsers" duration-ms="3986" started-at="2019-06-10T03:09:44Z" data-provider="setUpData" depends-on-methods="com.class04.WebOrderTask.login" finished-at="2019-06-10T03:09:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FamilyAlbum]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Anna Smith]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[123 Walnut Street]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Chantilly]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[VA]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[20147]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[MasterCard]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[4215456478941412]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[11/20]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- webOrders -->
-        <test-method status="PASS" signature="closed()[pri:0, instance:com.class02.SmartbearsoftwareExample@1593948d]" name="closed" is-config="true" duration-ms="107" started-at="2019-05-31T00:36:21Z" finished-at="2019-05-31T00:36:21Z">
+        </test-method> <!-- creatingAndVerifyingUsers -->
+        <test-method status="PASS" signature="creatingAndVerifyingUsers(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.class04.WebOrderTask@8bd1b6a]" name="creatingAndVerifyingUsers" duration-ms="3652" started-at="2019-06-10T03:09:48Z" data-provider="setUpData" depends-on-methods="com.class04.WebOrderTask.login" finished-at="2019-06-10T03:09:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MyMoney]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Lora Cohen]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[456 Chestnut Street]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Alexandria]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[VA]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[20147]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Visa]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[4115456468941410]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[03/25]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closed -->
-      </class> <!-- com.class02.SmartbearsoftwareExample -->
+        </test-method> <!-- creatingAndVerifyingUsers -->
+        <test-method status="PASS" signature="verifyAndUpdateUserOne()[pri:0, instance:com.class04.WebOrderTask@8bd1b6a]" name="verifyAndUpdateUserOne" duration-ms="546" started-at="2019-06-10T03:09:52Z" depends-on-methods="com.class04.WebOrderTask.creatingAndVerifyingUsers" finished-at="2019-06-10T03:09:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAndUpdateUserOne -->
+        <test-method status="PASS" signature="verifyAndUpdateUserTwo()[pri:0, instance:com.class04.WebOrderTask@8bd1b6a]" name="verifyAndUpdateUserTwo" duration-ms="638" started-at="2019-06-10T03:09:53Z" depends-on-methods="com.class04.WebOrderTask.creatingAndVerifyingUsers" finished-at="2019-06-10T03:09:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAndUpdateUserTwo -->
+        <test-method status="PASS" signature="verifyUserOne()[pri:0, instance:com.class04.WebOrderTask@8bd1b6a]" name="verifyUserOne" duration-ms="562" started-at="2019-06-10T03:09:53Z" depends-on-methods="com.class04.WebOrderTask.verifyAndUpdateUserOne" finished-at="2019-06-10T03:09:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserOne -->
+        <test-method status="PASS" signature="verifyUserTwo()[pri:0, instance:com.class04.WebOrderTask@8bd1b6a]" name="verifyUserTwo" duration-ms="219" started-at="2019-06-10T03:09:54Z" depends-on-methods="com.class04.WebOrderTask.verifyAndUpdateUserTwo" finished-at="2019-06-10T03:09:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserTwo -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.class04.WebOrderTask@8bd1b6a]" name="tearDown" is-config="true" duration-ms="79" started-at="2019-06-10T03:09:54Z" finished-at="2019-06-10T03:09:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.class04.WebOrderTask -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
